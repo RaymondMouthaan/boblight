@@ -21,8 +21,9 @@ LABEL org.label-schema.build-date=${BUILD_DATE} \
 
 COPY qemu/qemu-arm-static /usr/bin/
 
-RUN apk add --no-cache git make g++ autoconf libtool libusb portaudio \
-  && mkdir /boblightd
+RUN set -x \
+  && apk add --no-cache git make g++ autoconf libtool libusb portaudio \
+  && mkdir tmp/boblightd
 
 COPY . /boblightd
 
