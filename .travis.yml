@@ -6,7 +6,10 @@ services:
 env:
 
 before_script:
-
+  - sudo apt-get update -y
+  - sudo apt-get install --only-upgrade docker-ce -y
+  - sudo apt-get --yes --no-install-recommends install binfmt-support qemu-user-static
+  - docker run --rm --privileged multiarch/qemu-user-static:register --reset
 script:
   # Build Docker image
   - docker build --file ./Dockerfile --tag ${TARGET_IMAGE}:build-alpha .

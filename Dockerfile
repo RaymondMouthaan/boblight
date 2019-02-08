@@ -19,6 +19,8 @@ LABEL org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.vcs-url="" \
     maintainer="Raymond M Mouthaan <raymondmmouthaan@gmail.com>"
 
+COPY qemu/qemu-arm-static /usr/bin/
+
 RUN apk add --no-cache git make g++ autoconf libtool libusb portaudio \
   && mkdir /boblightd
 
