@@ -1,0 +1,16 @@
+language: bash
+
+services:
+  - docker
+
+env:
+
+before_script:
+
+script:
+  # Build Docker image
+  - docker build --file ./Dockerfile --tag ${TARGET_IMAGE}:build-alpha .
+
+# notify me when things fail
+notifications:
+    email: true
