@@ -25,17 +25,16 @@ COPY qemu/qemu-arm-static /usr/bin/
 
 RUN set -x \
   && apk update \
-  && apk add --no-cache make g++ autoconf libtool libusb portaudio
+  && apk add --no-cache make g++ autoconf libtool libusb portaudio \
+  && mkdir tmp/boblightd
 
-#  && mkdir tmp/boblightd
+COPY . tmp/boblightd
 
-# COPY . /boblightd
-
-#RUN cd /boblightd \
-#  && ./autogen.sh \
-#  && ./configure --without-x11 --prefix=/usr \
-#  && make \
-#  && make install
+RUN cd tmp/boblightd \
+  && ./autogen.sh \
+  && ./configure --without-x11 --prefix=/usr \
+  && make \
+  && make install
 
 #WORKDIR /homebridge
 #VOLUME /homebridge
