@@ -21,7 +21,7 @@ LABEL org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.vcs-url="" \
     maintainer="Raymond M Mouthaan <raymondmmouthaan@gmail.com>"
 
-COPY qemu/qemu-arm-static /usr/bin/
+COPY tmp/qemu-arm-static /usr/bin/
 
 RUN set -x \
   && apk update \
