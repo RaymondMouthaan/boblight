@@ -1,5 +1,5 @@
 ARG S6_ARCH
-FROM arm32v6/alpine:3.9
+FROM arm32v6/alpine:3.8
 
 # Define ARGs again to make them available after FROM
 ARG BUILD_DATE
