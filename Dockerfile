@@ -22,16 +22,17 @@ LABEL org.label-schema.build-date=${BUILD_DATE} \
 COPY qemu/qemu-arm-static /usr/bin/
 
 RUN set -x \
-  && apk add --no-cache git make g++ autoconf libtool libusb portaudio \
-  && mkdir tmp/boblightd
+  && apk add --no-cache git make g++ autoconf libtool libusb portaudio
 
-COPY . /boblightd
+#  && mkdir tmp/boblightd
 
-RUN cd /boblightd \
-  && ./autogen.sh \
-  && ./configure --without-x11 --prefix=/usr \
-  && make \
-  && make install
+# COPY . /boblightd
+
+#RUN cd /boblightd \
+#  && ./autogen.sh \
+#  && ./configure --without-x11 --prefix=/usr \
+#  && make \
+#  && make install
 
 #WORKDIR /homebridge
 #VOLUME /homebridge
