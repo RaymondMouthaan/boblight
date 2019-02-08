@@ -6,6 +6,8 @@ ARG BUILD_DATE
 ARG BUILD_VERSION
 ARG BUILD_REF
 
+USER root
+
 # Basic build-time metadata as defined at http://label-schema.org
 LABEL org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.docker.dockerfile="Dockerfile" \
