@@ -37,8 +37,8 @@ void Daemonize()
 
   //route stdout and stderr to /dev/null
   fclose(stdout);
-  stdout = fopen("/dev/null", "w");
+  freopen("/dev/null", "w", stdout);
   fclose(stderr);
-  stderr = fopen("/dev/null", "w");
+  freopen("/dev/null", "w", stderr);
 }
 
